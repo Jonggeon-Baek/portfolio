@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="index.html">Untitled</a></div>
+    <nav class="nav-links">
+      <a href="project.html">Project</a>
+      <a href="project.html">About</a>
+      <a href="project.html">Text</a>
+    </nav>
+  </header>
+
+  <main class="project-table-section">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="All">ALL</button>
+      <button class="filter-btn" data-filter="Kang">KANG</button>
+      <button class="filter-btn" data-filter="Ha">HA</button>
+      <button class="filter-btn" data-filter="Baek">BAEK</button>
+    </div>
+
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Project</th>
+          <th>Year</th>
+          <th>Type</th>
+          <th>By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-by="Kang"><td>1</td><td>A tribute to Modernism</td><td>2022</td><td>First Grade Project</td><td>Kang</td></tr>
+        <tr data-by="Ha"><td>2</td><td>Light Box</td><td>2024</td><td>Exhibition</td><td>Ha</td></tr>
+        <tr data-by="Baek"><td>3</td><td>Modular Home</td><td>2023</td><td>Architecture</td><td>Baek</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

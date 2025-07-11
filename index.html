@@ -1,3 +1,4 @@
+<!-- ✅ index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,26 +8,70 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard Variable', sans-serif;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    .nav-links a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 400;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
     <div class="logo">Untitled</div>
     <nav class="nav-links">
-      <a href="#">Project</a>
+      <a href="project.html">Project</a>
       <a href="#">About</a>
       <a href="#">Text</a>
     </nav>
   </header>
 
   <main class="hero">
-    <div class="slider">
-      <img src="assets/images/1.jpeg" class="slide active" />
-      <img src="assets/images/2.jpeg" class="slide" />
-      <img src="assets/images/3.jpeg" class="slide" />
-      <img src="assets/images/4.jpeg" class="slide" />
-    </div>
+    <img src="assets/images/1.jpeg" class="slide active" />
+    <img src="assets/images/2.jpeg" class="slide" />
+    <img src="assets/images/3.jpeg" class="slide" />
+    <img src="assets/images/4.jpeg" class="slide" />
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 3000);
+  </script>
 </body>
 </html>
